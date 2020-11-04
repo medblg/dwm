@@ -127,7 +127,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_0,      togglesticky,   {0} },
+	{ MODKEY|ShiftMask,             XK_s,      togglesticky,   {0} },
 	/*{ MODKEY,                       XK_o,      incrihgaps,     {.i = -1 } },*/
 	/* gaps handling keys */
 	{ Mod4Mask,			XK_equal,  defaultgaps,    {0} },
