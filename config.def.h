@@ -17,7 +17,7 @@ static const char *mutevol[] = { "pactl", "set-sink-mute", "0", "toggle", NULL }
 static const char *mutemic[] = { "amixer", "set", "Capture", "toggle", NULL };
 
 /* appearance */
-static const unsigned int borderpx  = 5;        /* border pixel of windows */
+static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int gappih    = 10;       /* horiz inner gap between windows */
 static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
@@ -89,7 +89,8 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "st", NULL };
+/*static const char *termcmd[]  = { "st", NULL };*/
+static const char *termcmd[]  = { "xfce4-terminal", NULL };
 static const char *firefox[]  = { "firefox", NULL };
 static const char *chromium[]     = { "chromium", NULL };
 static const char *gvim[]     = { "gvim", NULL };
