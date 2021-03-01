@@ -97,7 +97,7 @@ static const char *firefox[]  = { "firefox", NULL };
 static const char *chromium[]     = { "chromium", NULL };
 static const char *gvim[]     = { "gvim", NULL };
 static const char *xkill[]     = { "xkill", NULL };
-static const char *burp[]     = { "exo-open ~/.config/dots_sec/burp2.desktop", NULL };
+static const char *burp[]     = { "exo-open", "/home/s1m0x/.config/dots_sec/burp2.desktop", NULL };
 
 
 static Key keys[] = {
