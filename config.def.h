@@ -95,9 +95,10 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 /*static const char *termcmd[]  = { "xfce4-terminal", NULL };*/
 static const char *termcmd[]  = { "terminator", NULL };
 static const char *firefox[]  = { "firefox", NULL };
-static const char *chromium[]     = { "chromium", NULL };
+static const char *chromium[]     = { "google-chrome", NULL };
+/*static const char *chromium[]     = { "chromium", NULL };*/
 static const char *gvim[]     = { "gvim", NULL };
-static const char *xkill[]     = { "xkill", NULL };
+static const char *xkill[]    = { "xkill", NULL };
 static const char *burp[]     = { "exo-open", "/home/s1m0x/.config/dots_sec/burp2.desktop", NULL };
 
 
