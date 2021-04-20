@@ -30,7 +30,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 /*  monocle mode in the presence of several windows.                        */
 /*  Modes after showtab_nmodes are disabled.                                */
 enum showtab_modes { showtab_never, showtab_auto, showtab_nmodes, showtab_always};
-static const int showtab			= showtab_auto;        /* Default tab bar show mode */
+static const int showtab			= showtab_nmodes;        /* Default tab bar show mode */
 static const int toptab				= False;               /* False means bottom tab bar */
 static const unsigned int gappx     = 5;        /* gaps between windows */
 static const char *fonts[]          = { "FontAwesome:size=12", "monospace:size=11" };
