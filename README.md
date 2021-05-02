@@ -20,4 +20,4 @@ patches are organized in branches, and the master branch had all other branches 
 
 - New changes ! (02-05-2021), major changes from the status bar !, also the warp patch resolving the dual monitor cursor focus !
 
-![my dwm2](Screenshot_2021-05-02_04-50-38 "new screenshot")
+![my dwm2](Screenshot_2021-05-02_04-50-38.png "new screenshot")
