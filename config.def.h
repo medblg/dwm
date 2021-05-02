@@ -100,7 +100,7 @@ static const char *chromium[]     = { "google-chrome", NULL };
 static const char *gvim[]     = { "gvim", NULL };
 static const char *xkill[]    = { "xkill", NULL };
 static const char *burp[]     = { "exo-open", "/home/s1m0x/.config/dots_sec/burp2.desktop", NULL };
-
+static const char *gromit[]   = {"gromit-mpx", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -179,6 +179,7 @@ static Key keys[] = {
 	{ Mod4Mask,                     XK_g,      spawn,          {.v = gvim} },
 	{ Mod4Mask,                     XK_x,      spawn,          {.v = xkill} },
 	{ Mod4Mask,                     XK_b,      spawn,          {.v = burp} },
+	{ MODKEY,                     XK_F9,      spawn,          {.v = gromit} },
 
 };
 
