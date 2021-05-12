@@ -47,18 +47,22 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "2", "3", "" };
+static const char *tags[] = { " ", "", "", " " }; 
 
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Opera",     NULL,       NULL,       1 << 3,      0,           -1 },
-	{ "burp-StartBurp",     NULL,       NULL,      0,      1,           -1 },
-	/*{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },*/
+	    /* class      instance    title       tags mask     isfloating   monitor */
+	{ "Firefox",  NULL,       NULL,                    0,	   0,           -1 },
+	{ "Opera",     NULL,       NULL,                   0,	   0,           -1 },
+	{ "Google-chrome",  NULL,       NULL,              0,	   0,           -1 },
+	{ "Geany",  NULL,       NULL,                   1<<1,      0,           -1 },
+	{ "Mousepad",  NULL,       NULL,                1<<1,      0,           -1 },
+	{ "Terminator",     NULL,       NULL,		1<<2,      0,           -1 },
+	{ "burp-StartBurp",     NULL,       NULL,	1<<3,      1,           -1 },
+	{ "Thunar",     NULL,       NULL,	        1<<3,      0,           -1 },
 };
 
 /* layout(s) */
