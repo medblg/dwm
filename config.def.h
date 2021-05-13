@@ -46,6 +46,17 @@ static const char *colors[][3]      = {
 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
 };
 
+/* dwm-scratchpads */
+typedef struct {
+	const char *name;
+	const void *cmd;
+} Sp;
+const char *spcmd1[] = { "terminator", "-c", "TermScratch", "--geometry", "120x34", NULL };
+static Sp scratchpads[] = {
+	/* name          cmd  */
+	{"TermScratch",      spcmd1},
+};
+
 /* tagging */
 static const char *tags[] = { " ", "", "", " " }; 
 
@@ -55,12 +66,14 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	    /* class      instance    title       tags mask     isfloating   monitor */
-	{ "Firefox",  NULL,       NULL,                    0,	   0,           -1 },
-	{ "Opera",     NULL,       NULL,                   0,	   0,           -1 },
-	{ "Google-chrome",  NULL,       NULL,              0,	   0,           -1 },
+	{ "Firefox",  NULL,       NULL,                    1,	   0,           -1 },
+	{ "Opera",     NULL,       NULL,                   1,	   0,           -1 },
+	{ "Google-chrome",  NULL,       NULL,              1,	   0,           -1 },
 	{ "Geany",  NULL,       NULL,                   1<<1,      0,           -1 },
 	{ "Mousepad",  NULL,       NULL,                1<<1,      0,           -1 },
 	{ "Terminator",     NULL,       NULL,		1<<2,      0,           -1 },
+	/*{ "TermScratch",     NULL,       NULL,		   0,      1,           -1 },*/
+	{ "TermScratch",     NULL,       NULL,	    SPTAG(0),      1,           -1 },
 	{ "burp-StartBurp",     NULL,       NULL,	1<<3,      1,           -1 },
 	{ "Thunar",     NULL,       NULL,	        1<<3,      0,           -1 },
 };
@@ -105,6 +118,9 @@ static const char *gvim[]     = { "gvim", NULL };
 static const char *xkill[]    = { "xkill", NULL };
 static const char *burp[]     = { "exo-open", "/home/s1m0x/.config/dots_sec/burp2.desktop", NULL };
 static const char *gromit[]   = {"gromit-mpx", NULL };
+
+static const char scratchpadname[] = "TermScratch";
+static const char *scratchpadcmd[] = { "terminator", "-c", scratchpadname, "--geometry", "120x34", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -188,6 +204,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_minus, scratchpad_show, {1} },
 	{ MODKEY|ShiftMask,             XK_minus, scratchpad_hide, {0} },
 	{ MODKEY,                       XK_equal,scratchpad_remove,{0} },
+/*{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },*/
+	{ MODKEY,            		XK_grave,  	   togglescratch,  {.ui = 0 } },
 };
 
 /* button definitions */
