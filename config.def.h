@@ -185,6 +185,9 @@ static Key keys[] = {
 	{ Mod4Mask,                     XK_b,      spawn,          {.v = burp} },
 	{ MODKEY,                     XK_F9,      spawn,          {.v = gromit} },
 
+	{ MODKEY,                       XK_minus, scratchpad_show, {1} },
+	{ MODKEY|ShiftMask,             XK_minus, scratchpad_hide, {0} },
+	{ MODKEY,                       XK_equal,scratchpad_remove,{0} },
 };
 
 /* button definitions */
