@@ -51,7 +51,7 @@ typedef struct {
 	const char *name;
 	const void *cmd;
 } Sp;
-const char *spcmd1[] = { "terminator", "-c", "TermScratch", "--geometry", "120x34", NULL };
+const char *spcmd1[] = { "st", "-t", "scratchpad", "-g", "120x34", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd  */
 	{"TermScratch",      spcmd1},
@@ -69,6 +69,7 @@ static const Rule rules[] = {
 	{ "Firefox",  NULL,       NULL,                    1,	   0,           -1 },
 	{ "Opera",     NULL,       NULL,                   1,	   0,           -1 },
 	{ "Google-chrome",  NULL,       NULL,              1,	   0,           -1 },
+	{ "Chromium-browser",  NULL,       NULL,           1,	   0,           -1 },
 	{ "Geany",  NULL,       NULL,                   1<<1,      0,           -1 },
 	{ "Mousepad",  NULL,       NULL,                1<<1,      0,           -1 },
 	{ "Terminator",     NULL,       NULL,		1<<2,      0,           -1 },
@@ -120,7 +121,7 @@ static const char *burp[]     = { "exo-open", "/home/s1m0x/.config/dots_sec/burp
 static const char *gromit[]   = {"gromit-mpx", NULL };
 
 static const char scratchpadname[] = "TermScratch";
-static const char *scratchpadcmd[] = { "terminator", "-c", scratchpadname, "--geometry", "120x34", NULL };
+static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -156,13 +157,13 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
-	/*{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },*/
+	/*{ MODKEY|ShiftMask,           XK_0,      tag,            {.ui = ~0 } },*/
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_s,      togglesticky,   {0} },
-	/*{ MODKEY,                       XK_o,      incrihgaps,     {.i = -1 } },*/
+	/*{ MODKEY,                     XK_o,      incrihgaps,     {.i = -1 } },*/
 	/* gaps handling keys */
 	{ Mod4Mask,			XK_equal,  defaultgaps,    {0} },
 	{ Mod4Mask,                     XK_0,      togglegaps,     {0} },
@@ -173,8 +174,8 @@ static Key keys[] = {
 	{ MODKEY|Mod4Mask|ControlMask,  XK_h,      incrigaps,      {.i = +1 } },
 	{ MODKEY|Mod4Mask|ControlMask,  XK_l,      incrigaps,      {.i = -1 } },
 	{ MODKEY,                       XK_y,      incrihgaps,     {.i = +1 } },
-	/*{ MODKEY,                       XK_y,      incrihgaps,     {.i = +1 } },*/
-	/*{ MODKEY,                       XK_o,      incrihgaps,     {.i = -1 } },*/
+	/*{ MODKEY,                     XK_y,      incrihgaps,     {.i = +1 } },*/
+	/*{ MODKEY,                     XK_o,      incrihgaps,     {.i = -1 } },*/
 	{ MODKEY|ControlMask,           XK_y,      incrivgaps,     {.i = +1 } },
 	{ MODKEY|ControlMask,           XK_o,      incrivgaps,     {.i = -1 } },
 	{ MODKEY|Mod4Mask,              XK_y,      incrohgaps,     {.i = +1 } },
@@ -193,13 +194,13 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} }, 
 	{ MODKEY,                       XK_o,      winview,        {0} },
-	 /* run programs */
+	/* run programs */
 	{ Mod4Mask,                     XK_f,      spawn,          {.v = firefox} },
 	{ Mod4Mask,                     XK_c,      spawn,          {.v = chromium} },
 	{ Mod4Mask,                     XK_g,      spawn,          {.v = gvim} },
 	{ Mod4Mask,                     XK_x,      spawn,          {.v = xkill} },
 	{ Mod4Mask,                     XK_b,      spawn,          {.v = burp} },
-	{ MODKEY,                     XK_F9,      spawn,          {.v = gromit} },
+	{ MODKEY,                       XK_F9,      spawn,          {.v = gromit} },
 
 	{ MODKEY,                       XK_minus, scratchpad_show, {1} },
 	{ MODKEY|ShiftMask,             XK_minus, scratchpad_hide, {0} },
